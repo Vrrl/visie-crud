@@ -30,7 +30,7 @@ A step by step series of examples that tell you how to get a development env run
 
 ```
 git clone https://github.com/Vrrl/
-cd
+cd visie-crud
 ```
 ##### Without Docker
 
@@ -56,31 +56,8 @@ python server.py
 5. Check if it is running with curl request
 
 ```
-curl http://127.0.0.1:5000/hello-world
+curl http://127.0.0.1:8000/docs
 
-# Hello World! The API is Running!
-```
-##### With Docker
-
-2. building the container
-
-```
-docker build -t ------ .
-```
-
-3. running the container
-
-```
-
-docker run -e DATABASE_CONNECTION_STRING=sqlite:///./test.db --network=host -p 80:5000 nork-town-cars
-```
-
-##### With Docker Compose (recommended)
-
-2. build & run
-
-```
-docker-compose up -d
 ```
 
 ## Running the tests
@@ -102,15 +79,11 @@ pylint src
 
 ## Usage
 
-Load the Insomnia Collection file "insomnia_routes_collection" and make requests.
+Go to the API Documentation at http://127.0.0.1:8000/docs and make a request
 
 ## Built Using 
 
-- [FastAPI](https://flask.palletsprojects.com/) - Web Framework
+- [FastAPI](https://fastapi.tiangolo.com/) - Web Framework
 - [Sqlalchemy](https://www.sqlalchemy.org/) - Database ORM
 - [PyTest](https://pytest.org/) - Test Tools
 
-## Extra Todo's:
-Things that will make the project better in my opnion, but it's not necessary
-
-- [ ] ----
