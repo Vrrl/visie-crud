@@ -1,1 +1,1 @@
-from .pessoa import PessoaSchema
+from .pessoa import PessoaSchema, ListPessoaSchema

@@ -2,14 +2,14 @@ from typing import Optional, List
 
 from fastapi import APIRouter, Depends, HTTPException, status
 
-from src.application.schemas import PessoaSchema
+from src.application.schemas import PessoaSchema, ListPessoaSchema
 
 from src.application.services import PessoaService
 
 router = APIRouter(tags=["pessoas"], prefix="/v1/pessoas")
 
-@router.get("/")
-def list_users(
+@router.get("/", response_model=List[ListPessoaSchema])
+def list_pessoas(
     limit: Optional[int] = 100,
     start: Optional[int] = 0,
     pessoa_service: PessoaService = Depends(),
@@ -19,7 +19,7 @@ def list_users(
 
 
 @router.post("/")
-def list_users(
+def create_pessoa(
     pessoa: PessoaSchema,
     pessoa_service: PessoaService = Depends(),
 ):
@@ -28,7 +28,7 @@ def list_users(
 
 
 @router.put("/{pessoa_id}")
-def list_users(
+def update_pessoa(
     pessoa_id: int,
     pessoa: PessoaSchema,
     pessoa_service: PessoaService = Depends(),
@@ -38,7 +38,7 @@ def list_users(
 
 
 @router.delete("/{pessoa_id}")
-def list_users(
+def delete_pessoa(
     pessoa_id: int,
     pessoa_service: PessoaService = Depends(),
 ):
