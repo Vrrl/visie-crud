@@ -9,6 +9,7 @@ class PessoaSchema(BaseModel):
     data_nascimento: date
     data_admissao: date
 class ListPessoaSchema(BaseModel):
+    id_pessoa: int
     nome: str
     data_admissao: date
     
