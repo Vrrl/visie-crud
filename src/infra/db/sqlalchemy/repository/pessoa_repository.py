@@ -41,7 +41,7 @@ class PesssoaRepository():
     def delete(self, id: int) -> None:
         with DBConnectionHandler() as db_connection:
             try:
-                db_connection.session.query(Pessoa).filter_by(id=id).delete()
+                db_connection.session.query(Pessoa).filter_by(id_pessoa=id).delete()
                 db_connection.session.commit()
                 db_connection.session.flush()
 
